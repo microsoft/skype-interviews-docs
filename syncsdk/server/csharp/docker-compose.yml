@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  devhub:
+    image: ${DOCKER_REGISTRY}devhub
+    build:
+      context: .
+      dockerfile: devhub/Dockerfile
