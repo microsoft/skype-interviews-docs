@@ -35,15 +35,9 @@ namespace DotNetSample
 
         private static async Task<string> CreateInterviewAsync()
         {
-            var serializer = new JsonSerializerSettings
-            {
-                ContractResolver = new CamelCasePropertyNamesContractResolver()
-            };
-
             // NOTE: nimal, 3/23/2018 - read about different payloads on https://dev.skype.com/interviews
             var payload = "{}";
-            var serializedPayload = JsonConvert.SerializeObject(payload, Formatting.None, serializer);
-            var payloadHash = GetSha256Hash(serializedPayload);
+            var payloadHash = GetSha256Hash(payload);
             
             // create a token valid for the next 10 secomnds
             var token = GetJwtToken(YOUR_API_KEY, YOUR_API_SECRET, payloadHash, DateTime.UtcNow, 10);
