@@ -1,3 +1,21 @@
+# Skype Interviews API docs
+
+Skype Interviews API allows you to create, customize and schedule Skype Interview calls programmatically.
+
+1. [Getting started](docs/getting-started.md)
+2. [Create interview links](docs/create-links.md)
+3. [Customize capabilities](docs/customize-capabilities.md)
+4. [Configure Skype call and chat](docs/configure-skype.md)
+5. [Configure code editor](docs/configure-code.md)
+6. [Setup a coding task](docs/setup-tasks.md)
+7. [Schedule interviews](docs/schedule-interviews.md)
+8. [Retrieve interview data](docs/fetch-interviews-data.md)
+9. [Modify interview stage](docs/manage-interviews.md)
+10. [Manage job positions](manage-positions.md)
+11. [Manage tenants](manage-tenants.md)
+12. [Subscribe to webhooks](webhooks.md)
+
+
 
 # Contributing
 
