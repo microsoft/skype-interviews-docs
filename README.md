@@ -1,5 +1,3 @@
-# Skype Interviews API docs
-
 Skype Interviews API allows you to create, customize and schedule Skype Interview calls programmatically.
 
 1. [Getting started](docs/getting-started.md)
