@@ -9,9 +9,9 @@ Skype Interviews API allows you to create, customize and schedule Skype Intervie
 7. [Schedule interviews](docs/schedule-interviews.md)
 8. [Retrieve interview data](docs/fetch-interviews-data.md)
 9. [Modify interview stage](docs/manage-interviews.md)
-10. [Manage job positions](manage-positions.md)
-11. [Manage tenants](manage-tenants.md)
-12. [Subscribe to webhooks](webhooks.md)
+10. [Manage job positions](docs/manage-positions.md)
+11. [Manage tenants](docs/manage-tenants.md)
+12. [Subscribe to webhooks](docs/webhooks.md)
 
 
 
