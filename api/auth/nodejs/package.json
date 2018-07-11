@@ -10,8 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.16.2",
     "guid": "0.0.12",
     "jsonwebtoken": "^8.1.1",
     "node-fetch": "^2.0.0",

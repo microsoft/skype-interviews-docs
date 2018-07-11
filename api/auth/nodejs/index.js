@@ -1,15 +1,12 @@
-var express = require('express');
-var app = express();
 var Guid = require('guid');
-var bodyParser = require('body-parser');
 var sha256 = require('sha256');
 var jwt = require('jsonwebtoken');
 var fetch = require('node-fetch')
 
 // Setup your API variables
 const url = 'https://interviews.skype.com/api/interviews'
-const API_KEY = 'YOUR_API_KEY'
-const API_SECRET = 'YOUR_API_SECRET'
+const API_KEY = '40b55bb6-fd2d-7e05-c276-7d1ee4f8b54d'
+const API_SECRET = '2d46ef9d-97c4-a691-4125-da407f7fa366'
 
 function generateSignature(content) {
   var payload = {
