@@ -1,6 +1,8 @@
+# Configure Skype call and chat
+
 By default Skype Interviews enables calling, chatting and a lobby experience. If you don't need some of those features, you can turn them off.
 
-# List of available Skype configurations
+## List of available Skype configurations
 
 |Property |	Description	| Data type |	Default value |
 |---------|-------------|---|---|
@@ -8,7 +10,7 @@ By default Skype Interviews enables calling, chatting and a lobby experience. If
 |**chat** | Enable Skype chat? | Boolean | *True* |
 |**lobby** | Enable the lobby / preparation experience? | Boolean | *True* |
 
-# Set Skype configurations
+## Set Skype configurations
 
 If you don't want to use the lobby and the calling experience, you can just selective turn them off by passing the `skypeConfig` object in your request.
 

@@ -1,11 +1,13 @@
+# Getting Started
+
 Skype Interviews API is built on top of the premise of using authenticated *HTTP Post* requests to a single endpoint: `https://interviews.skype.com/api/interviews`
 
-# Get your API key and secret
+## Get your API key and secret
 In order to use the Skype Interviews API, you need to [sign up for an API key and secret](https://interviews.skype.com/api/get-started). Using the `API Key` and the `API Secret` you can generate a [JSON Web Token (JWT)](https://jwt.io) to authenticate your request.
 
 If you want to learn more about JWT, check out our [blog post](https://aka.ms/Fopdvn) and [jwt.io](https://jwt.io).
 
-# Authenticate your request
+## Authenticate your request
 
 You can generate an interview link by doing an authenticated HTTP POST request to `https://interviews.skype.com/api/interviews`. 
 
@@ -46,7 +48,7 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkODY2MWExNC00YjdjLTVmZGEtMjIyNy0
 ```
 
 
-## JavaScript sample
+### JavaScript sample
 
 We are using the `jsonwebtoken` node module to sign the payload and `node-fetch` to issue the HTTP POST request.
 

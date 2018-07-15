@@ -1,6 +1,8 @@
+# Customize interviews
+
 The Skype Interviews API offers a wide range of capabilities which you can configure before the interview. By default almost all capabilities are enabled to provide the most extensive out-of-the-box experience to our users. You can selective disable one or more capabilities to adapt to your user scenario.
 
-# List of available capabilities
+## List of available capabilities
 
 |Property |	Description	| Data type |	Default value |
 |---------|-------------|---|---|
@@ -10,7 +12,7 @@ The Skype Interviews API offers a wide range of capabilities which you can confi
 |**notes** | Enable note-taking feature? | Boolean | *True* |
 |**emails** | Shoud we send participants email confirmations about their interview? | Boolean | *True* |
 
-# Configure capabilities
+## Configure capabilities
 
 You can set capabilities by providing the `capabilities` object in your request. For instance, if we want to have an interview without the code editor and note-taking functionality, then we can just use this request.
 
@@ -53,7 +55,7 @@ Content-Type: application/json
 
 You can see your settings reflected in the `capabilities` object in the response of our API.
 
-# Create a Skype Interview without requesting feedback from interviewer
+## Create a Skype Interview without requesting feedback from interviewer
 In case you have your own feedback collection solution, you can surpress our feedback request email.
 **Request**
 ```
@@ -90,7 +92,7 @@ Content-Type: application/json
 }
 ```
 
-# Create a Skype Interview without Skype calling
+## Create a Skype Interview without Skype calling
 In case you're using a different calling solution and want to only use the other features of Skype Interviews.
 
 **Request**

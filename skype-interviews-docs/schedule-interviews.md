@@ -1,6 +1,8 @@
+# Schedule interviews
+
 In many cases defining the date and time for interview suitable for all of the candidates is a cumbersome task. Skype Interviews can help with that by automatically sending emails to the participants and guiding them in picking the right date & time.
 
-# List of capabilities for scheduling interviews
+## List of capabilities for scheduling interviews
 |Property |	Description	| Data type |	Default value |
 |---------|-------------|---|---|
 |**start** |	Date and time when interview is scheduled to start | Date | `undefined` |
@@ -8,7 +10,7 @@ In many cases defining the date and time for interview suitable for all of the c
 |**mode** | What is the scheduling mode - manual entry or automatic scheduling? | String - `"manual"` or `"automatic"` | `"manual"` |
 |**dateproposing** | Which one of the meeting participants picks the set of dates to be offered to other side? | String - `"candidate"` or `"interviewer"` | `"interviewer"`|
 
-# Schedule an interview at an agreed date and time
+## Schedule an interview at an agreed date and time
 
 Normally, the Skype Interviews don't have a fixed date or duration. If you know the interview's date and time, you can optionally set it to make sure that the interview link is only accessible 10 minutes before and after the actual interview.
 
@@ -43,7 +45,7 @@ Content-Type: application/json
 }
 ```
 
-# Leverage Skype Interviews' automatic scheduling capabilities
+## Leverage Skype Interviews' automatic scheduling capabilities
 
 For automatic scheduling, we give you the ability to determine who proposes the time: the interviewer or the candidate. By providing the `participants` information, you are also protecting the interview link from being accessed by others. The interview links are now unique to the participants's email. 
 
@@ -145,7 +147,7 @@ The `type` of the URL tells you what it's used for.
 |`Scheduling`| Url for candidate / interviewer to propose or select scheduling time slots|
 |`Feedback`| Url for interviewer to submit feedback which will be visible in the administrator dashboard|
 
-# Setup time zones for scheduling
+## Setup time zones for scheduling
 
 If you want to pre-define the `timezone` of the user, then you can supply it in the `participants` object as well. All timezone values are in the IANA format which is listed in [this Wikipedia article](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) under the "TZ*" column.
 
@@ -177,7 +179,7 @@ Content-Type: application/json
 ```
 
 
-# Schedule interviews without Skype sending the emails
+## Schedule interviews without Skype sending the emails
 By default if you schedule an interview, we send an email to the participants to notify them of their interview. If you want to send out the URLs on your own, you can just disable the `emails` capabilitiy in the `capabilities` object.
 
 Let's assume that I want to schedule a 60-minute interview on the 5th Decemeber 2017 at 14:00 and want to manage the URLs on my own. 

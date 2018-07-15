@@ -1,6 +1,8 @@
+# Webhooks
+
 You can configure the webhook URL in our [API Settings](https://interviews.skype.com/api/get-started). Your webhook URL must be using HTTPS and has to respond within 30 seconds.
 
-# Sample event
+## Sample event
 
 When you first create a Skype Interview your webhook should receive a request with the following body:
 
@@ -42,7 +44,7 @@ Here's the list of all stages an interview could go through.
 |`FeedbackFailed`|When an error occured while submitting the feedback.|
 |`FeedbackCompleted`|When the interviewer submitted feedback.|
 
-# Verify the webhook request
+## Verify the webhook request
 
 Every webhook request also contains an `Authorization` header which you can use to verify that the call actually came from Skype Interviews. 
 
@@ -78,7 +80,7 @@ var payload = Base64decode(splits[1])
 assert(sha256(REQUEST.body) == payload.sub)
 ```
 
-# NodeJS sample
+## NodeJS sample
 [![Remix on Glitch](assets/remix_button.svg)](https://glitch.com/edit/#!/skype-interviews-webhook-sample?path=README.md:1:0)
 
 Try our sample that's hosted on Glitch. Just remix the code and follow the instructions in the Readme. All you need to do is to copy and paste the API Key and Secret and supply us the Glitch project URL. Then you'll see event changes of your Skype Interviews live on the Glitch URL.

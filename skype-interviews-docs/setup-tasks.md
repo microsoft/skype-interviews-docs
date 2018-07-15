@@ -1,6 +1,8 @@
+# Setup tasks
+
 If you have a few task that the candidate should tackle during the interview, you can set it up through the API as well. 
 
-# Preload a task in the code editor
+## Preload a task in the code editor
 A `task` object contains meta data about the task and every task has a list of definitions for the task. The definition "defines" the task in various different coding languages.
 
 ### `task` object schema
@@ -18,7 +20,7 @@ A `task` object contains meta data about the task and every task has a list of d
 
 __Note:__ Even though you have to pass a list of `tasks` to the API, we currently only support 1 task. We will also automatically limit the code editor's list of languages to the one for which you have a `definition` for.
 
-## Example task: Find the error in this n-th fibonacci number function
+### Example task: Find the error in this n-th fibonacci number function
 Let's assume we want to setup a task that's targeted towards Javascript and Python developers. The task is to identify the error in the recursive fibonacci function.
 
 The "wrong" Javascript code would look like this:

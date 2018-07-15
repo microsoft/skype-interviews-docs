@@ -1,8 +1,10 @@
+# Manage job positions
+
 Every Skype Interview is created under a position which is defined by a name, code and a small description. The Skype interview position is a simple way of connecting external ATS, job boards and other systems.
 
 By default, Skype Interviews API does not require partners to use positions at all. However, if partner wants to group interviews under positions it is possible.
 
-# List of capabilities for positions
+## List of capabilities for positions
 |Property |	Description	| Data type |	Default value |
 |---------|-------------|---|---|
 |**title** |	Job position title for the interview | String | `"Default position"` |
@@ -10,7 +12,7 @@ By default, Skype Interviews API does not require partners to use positions at a
 |**description** | Description of the job position | String | `""` |
 |**url** | URL of your job posting | String | `""` |
 
-# Create a new interview under a new position
+## Create a new interview under a new position
 You can create a new interview under a new position by passing us a `position` object. If the `code` doesn't already exist, we'll automatically create a new position and create a new interview under that position.
 
 **Request**
@@ -54,7 +56,7 @@ Content-Type: application/json
 }
 ```
 
-# Create a new interview under an existing position
+## Create a new interview under an existing position
 To create a new interview under an existing solution, just pass in the `position` object with a `code` value that already exists and we'll automatically create a new interview under that position.
 
 **Request**
