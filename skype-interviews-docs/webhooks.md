@@ -81,6 +81,6 @@ assert(sha256(REQUEST.body) === payload.sub)
 ```
 
 ## NodeJS sample
-[![Remix on Glitch](assets/remix_button.svg)](https://glitch.com/edit/#!/skype-interviews-webhook-sample?path=README.md:1:0)
+[![Remix on Glitch](skype-interviews-docs/assets/remix_button.svg)](https://glitch.com/edit/#!/skype-interviews-webhook-sample?path=README.md:1:0)
 
 Try our sample that's hosted on Glitch. Just remix the code and follow the instructions in the Readme. All you need to do is to copy and paste the API Key and Secret and supply us the Glitch project URL. Then you'll see event changes of your Skype Interviews live on the Glitch URL.
