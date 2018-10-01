@@ -4,11 +4,11 @@ In many cases defining the date and time for interview suitable for all of the c
 
 ## List of capabilities for scheduling interviews
 |Property |	Description	| Data type |	Default value |
-|---------|-------------|---|---|
-|**start** |	Date and time when interview is scheduled to start | Date | `undefined` |
+|:---------:|-------------|:---:|:---:|
+|**start** | Date and time when interview is scheduled to start | Date | `undefined` |
 |**duration** | Duration of the interview in minutes | Integer | `undefined` |
 |**mode** | What is the scheduling mode - manual entry or automatic scheduling? | String - `"manual"` or `"automatic"` | `"manual"` |
-|**dateproposing** | Which one of the meeting participants picks the set of dates to be offered to other side? | String - `"candidate"` or `"interviewer"` | `"interviewer"`|
+|**dateproposing** | Which one of the meeting participants picks the set of dates to be offered to the other side? | String - `"candidate"` or `"interviewer"` | `"interviewer"`|
 
 ## Schedule an interview at an agreed date and time
 
@@ -17,7 +17,7 @@ Normally, the Skype Interviews don't have a fixed date or duration. If you know 
 You can setup scheduling related values by providing the `scheduling` data object. Provide `date` as a JavaScript Date object and `duration` in minutes as an integer.
 
 **Request**
-```
+```http
 POST /api/interviews HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -32,7 +32,7 @@ Content-Type: application/json
 ```
 
 **Response**
-```
+```json
 {
     ...,
     "scheduling": {
@@ -54,7 +54,7 @@ For automatic scheduling, we give you the ability to determine who proposes the 
 Here is an example of automatic scheduling of a 90-minute interview where the candidate proposes one or many time slots and then interviewers gets to pick a suitable slot.
 
 **Request**
-```
+```http
 POST /api/interviews HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -74,7 +74,7 @@ Content-Type: application/json
 ```
 
 **Response**
-```
+```json
 {
     ...,
     "participants": [
@@ -142,7 +142,7 @@ Notice that you have a list of different URLs now in the response. There are dif
 The `type` of the URL tells you what it's used for. 
 
 |URL `type`|Description|
-|-|-|
+|:-:|-|
 |`Interview`| Url for conducting the actual interview itself|
 |`Scheduling`| Url for candidate / interviewer to propose or select scheduling time slots|
 |`Feedback`| Url for interviewer to submit feedback which will be visible in the administrator dashboard|
@@ -152,7 +152,7 @@ The `type` of the URL tells you what it's used for.
 If you want to pre-define the `timezone` of the user, then you can supply it in the `participants` object as well. All timezone values are in the IANA format which is listed in [this Wikipedia article](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) under the "TZ*" column.
 
 **Request**
-```
+```http
 POST /api/interviews HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -185,7 +185,7 @@ By default if you schedule an interview, we send an email to the participants to
 Let's assume that I want to schedule a 60-minute interview on the 5th Decemeber 2017 at 14:00 and want to manage the URLs on my own. 
 
 **Request**
-```
+```http
 POST /api/interviews HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -215,7 +215,7 @@ Content-Type: application/json
 ```
 
 **Response**
-```
+```json
 {
     "capabilities": {
         ...,
