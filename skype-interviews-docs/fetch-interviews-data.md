@@ -4,12 +4,12 @@ If your application wants to leverage all the information that Skype Interviews 
 
 To retrieve information such as "notes", "feedback" and "code snapshots", we just need to issue a HTTP `GET` request to `https://interviews.skype.com/api/interviews/YOUR_INTERVIEW_CODE`. 
 
-**note:** for the `GET` request please omit the `sub` property in the `JWT` token.
+**Note:** for the `GET` request please omit the `sub` property in the `JWT` token.
 
 Here's an example request to retrieve the information.
 
 **Request**
-```
+```http
 GET /api/interviews/YOUR_INTERVIEW_CODE HTTP/1.1 
 Host: interviews.skype.com 
 Authorization: Bearer <YOUR_TOKEN_WITHOUT_SUB> 
