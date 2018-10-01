@@ -30,7 +30,7 @@ An interview goes through multiple stages and with every request we send you the
 Here's the list of all stages an interview could go through.
 
 |Stage name|Description|
-|-|-|
+|:-:|-|
 |`InterviewCreated`|When a recruiter creates a new interview.|
 |`InterviewCanceled`|When the recruiter cancels the interview.|
 |`InterviewArchived`|When the recruiter archives the interview.|
@@ -51,7 +51,7 @@ Every webhook request also contains an `Authorization` header which you can use 
 We recommend using a library from [jwt.io](https://jwt.io) to verify the token. If you choose to verify it manually, here are the 4 things to check before you can fully trust the request.
 
 1. Verify the signature
-```
+```js
 var received_token = REQUEST.headers['Authorization'].replace("Bearer ", "")
 var splits = received_token.split('.')
 
@@ -62,20 +62,20 @@ assert(received_token ==  new_token);
 ```
 
 2. Verify that the token is issued from your company
-```
+```js
 var payload = Base64decode(splits[1])
 assert(API_KEY ==  payload.iss)
 ```
 
 3. Verify that the token didn't expire
-```
+```js
 var payload = Base64decode(splits[1])
 assert(date.now() > payload.iat)
 assert(date.now() < payload.exp)
 ```
 
 4. Verify that event payload (the HTTPS request's body) is not manipulated
-```
+```js
 var payload = Base64decode(splits[1])
 assert(sha256(REQUEST.body) == payload.sub)
 ```
