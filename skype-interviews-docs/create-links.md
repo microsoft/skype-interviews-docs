@@ -3,7 +3,7 @@
 With your API key set up, we can start creating interview links. The simplest "out-of-the-box" experience of Skype Interviews can be created with this HTTP POST request.
 
 **Request**
-```
+```http
 POST /api/interviews HTTP/1.1 
 Host: interviews.skype.com 
 Authorization: Bearer <YOUR_TOKEN> 
@@ -12,7 +12,7 @@ Content-Type: application/json
 {}
 ```
 **Response**
-```
+```json
 {
     ...,
     "urls": [
@@ -32,7 +32,7 @@ You can retrieve the `url` from the `urls` list and send it out to your candidat
 Every interview can have it's own name, which will be the title of the Skype group conversation. We also provide you a "position code" variable that can help you associate an interview to a given job position posting.
 
 HTTP Request example:
-```
+```http
 POST /api/interviews HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -44,7 +44,7 @@ Content-Type: application/json
 }
 ```
 **Response**
-```
+```json
 {
     "code": "RENE2010",
     "title": ".Net Developer Interview",
