@@ -58,26 +58,26 @@ var splits = received_token.split('.')
 var signature = HMACSHA256( splits[0] + "." + splits[1],   API_SECRET)
 var new_token = splits[0] + "." + splits[1] + "." signature
 
-assert(received_token ==  new_token);
+assert(received_token === new_token);
 ```
 
 2. Verify that the token is issued from your company
 ```js
 var payload = Base64decode(splits[1])
-assert(API_KEY ==  payload.iss)
+assert(API_KEY === payload.iss)
 ```
 
 3. Verify that the token didn't expire
 ```js
 var payload = Base64decode(splits[1])
-assert(date.now() > payload.iat)
-assert(date.now() < payload.exp)
+assert(Date.now() > payload.iat)
+assert(Date.now() < payload.exp)
 ```
 
 4. Verify that event payload (the HTTPS request's body) is not manipulated
 ```js
 var payload = Base64decode(splits[1])
-assert(sha256(REQUEST.body) == payload.sub)
+assert(sha256(REQUEST.body) === payload.sub)
 ```
 
 ## NodeJS sample
