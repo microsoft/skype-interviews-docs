@@ -4,7 +4,7 @@ If you want to manage a group of different positions and their respective interv
 Basically tenants function like a seperate company. They have their own API keys with which they can create their own positions and interviews. 
 
 **Request**
-```
+```http
 POST /api/tenants HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -18,7 +18,7 @@ Content-Type: application/json
 ```
 
 **Response**
-```
+```json
 {
   "dashboardUrl": "YOUR_DASHBOARD_URL",
   "company": {
@@ -37,7 +37,7 @@ Using the new `API_KEY` and `API_SECRET` you can generate a new JWT to create in
 If you want to have an admin for the company, you can also provide the admin's email and he can then access the dashboard with his email address, after authentication.
 
 **Request**
-```
+```http
 POST /api/tenants HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -55,7 +55,7 @@ Content-Type: application/json
 ```
 
 **Response**
-```
+```json
 {
   "dashboardUrl": "YOUR_DASHBOARD_URL",
   "company": {
@@ -79,7 +79,7 @@ Content-Type: application/json
 Setup webhooks for a tenant can also be done by supplying the endpoint in the body
 
 **Request**
-```
+```http
 POST /api/tenants HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -96,7 +96,7 @@ Content-Type: application/json
 ```
 
 **Response**
-```
+```json
 {
   "dashboardUrl": "YOUR_DASHBOARD_URL",
   "company": {
