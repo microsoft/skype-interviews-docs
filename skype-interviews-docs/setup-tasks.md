@@ -15,7 +15,7 @@ A `task` object contains meta data about the task and every task has a list of d
 ### `definition` object schema
 |Property |	Description	| Data type | Default value |
 |:---------:|-------------|:---:|:---:|
-|**language** | Which programming language is this definition for? *Possible values:* `c`, `cpp`, `csharp`, `fsharp`, `go`, `java`, `javascript`, `php`, `python`, `ruby`, `rust`, `typescript` or `all` | String | `["all"]` |
+|**language** | Which programming language is this definition for? *Possible values:* `c`, `cpp`, `csharp`, `fsharp`, `go`, `java`, `javascript`, `php`, `python`, `ruby`, `rust`, `typescript` or `all` | String[] | `["all"]` |
 |**content** | The content of the task that'll show up in the code editor for the given `language` | String | `""`|
 
 __Note:__ Even though you have to pass a list of `tasks` to the API, we currently only support 1 task. We will also automatically limit the code editor's list of languages to the one for which you have a `definition` for.
