@@ -5,7 +5,7 @@ By default Skype Interviews enables calling, chatting and a lobby experience. If
 ## List of available Skype configurations
 
 |Property |	Description	| Data type |	Default value |
-|---------|-------------|---|---|
+|:---------:|-------------|:---:|:---:|
 |**call** |	Enable Skype audio + video calling? | Boolean | *True* |
 |**chat** | Enable Skype chat? | Boolean | *True* |
 |**lobby** | Enable the lobby / preparation experience? | Boolean | *True* |
@@ -15,7 +15,7 @@ By default Skype Interviews enables calling, chatting and a lobby experience. If
 If you don't want to use the lobby and the calling experience, you can just selective turn them off by passing the `skypeConfig` object in your request.
 
 **Request**
-```
+```http
 POST /api/interviews HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -30,7 +30,7 @@ Content-Type: application/json
 ```
 
 **Response**
-```
+```json
 {
     ...,
     "urls": [

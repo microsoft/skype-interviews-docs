@@ -5,10 +5,10 @@ The Skype Interviews API offers a wide range of capabilities which you can confi
 ## List of available capabilities
 
 |Property |	Description	| Data type |	Default value |
-|---------|-------------|---|---|
-|**codeEditor** |	Enable real-time code editor? | Boolean | *True* |
+|:---------:|-------------|:---:|:---:|
+|**codeEditor** | Enable real-time code editor? | Boolean | *True* |
 |**skype** | Enable Skype chat, call and lobby? | Boolean | *True* |
-|**feedbacks** | Send email to request feedback from the interviewer after the interview? | Boolean | *True* for interview with `participants`. *False* for interview without `participants` |
+|**feedbacks** | Send email to request feedback from the interviewer after the interview? | Boolean | *True* for interview with `participants`. *False* for interview without `participants` |
 |**notes** | Enable note-taking feature? | Boolean | *True* |
 |**emails** | Shoud we send participants email confirmations about their interview? | Boolean | *True* |
 
@@ -17,7 +17,7 @@ The Skype Interviews API offers a wide range of capabilities which you can confi
 You can set capabilities by providing the `capabilities` object in your request. For instance, if we want to have an interview without the code editor and note-taking functionality, then we can just use this request.
 
 **Request**
-```
+```http
 POST /api/interviews HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -32,7 +32,7 @@ Content-Type: application/json
 ```
 
 **Response**
-```
+```json
 {
     ...,
     "capabilities": {
@@ -57,8 +57,9 @@ You can see your settings reflected in the `capabilities` object in the response
 
 ## Create a Skype Interview without requesting feedback from interviewer
 In case you have your own feedback collection solution, you can surpress our feedback request email.
+
 **Request**
-```
+```http
 POST /api/interviews HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -70,8 +71,9 @@ Content-Type: application/json
 	}
 }
 ```
+
 **Response**
-```
+```json
 {
     ...,
     "capabilities": {
@@ -96,7 +98,7 @@ Content-Type: application/json
 In case you're using a different calling solution and want to only use the other features of Skype Interviews.
 
 **Request**
-```
+```http
 POST /api/interviews HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -108,8 +110,9 @@ Content-Type: application/json
 	}
 }
 ```
+
 **Response**
-```
+```json
 {
     ...,
     "capabilities": {

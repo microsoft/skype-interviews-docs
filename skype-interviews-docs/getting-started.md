@@ -20,18 +20,19 @@ The token breaks down into a **header**, **payload** and **signature**.
 You can rely on one of the [numerous libraries](https://jwt.io/#libraries) to generate JWTs to help you create the JWT. You mostly have to configure the payload. 
 
 The **payload** is a JSON object that has the following attributes:
+
 |Key | Description | Data type|
-|----|-------------|----------|
-|`jti`| **JWT ID** - a unique identifier required for every JWT to prevent replay attacks. **Value must be random GUID.**| string|
-|`iss`| **Issuer** - unique identifier of the request issuer. In our case, your `API Key`.| string|
-|`iat`| **Issued At** - NumericDate¹ value indicating to us, when the request was issued. | number|
-|`sub`| **Subject** - A SHA256 hash of the request's body. | string|
-|`exp`| **Expiration Time** - NumericDate vaule indicating after which time we should classify this request as invalid. **Value must be  `current NumericDate + 10 seconds`**.| number|
+|:----:|-------------|:----------:|
+|`jti`| **JWT ID** - a unique identifier required for every JWT to prevent replay attacks. **Value must be random GUID.**| string |
+|`iss`| **Issuer** - unique identifier of the request issuer. In our case, your `API Key`.| string |
+|`iat`| **Issued At** - NumericDate¹ value indicating to us, when the request was issued. | number |
+|`sub`| **Subject** - A SHA256 hash of the request's body. | string |
+|`exp`| **Expiration Time** - NumericDate vaule indicating after which time we should classify this request as invalid. **Value must be  `current NumericDate + 10 seconds`**.| number |
 
 **Example**
 
 A token payload would look like this: 
-```
+```json5
 {
     "jti": "d8661a14-4b7c-5fda-2227-9b055fcf5b10", // Random GUID
     "iss": "YOUR_API_KEY",
@@ -48,13 +49,13 @@ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJkODY2MWExNC00YjdjLTVmZGEtMjIyNy0
 ```
 
 
-### JavaScript sample
+### JavaScript example
 
 We are using the `jsonwebtoken` node module to sign the payload and `node-fetch` to issue the HTTP POST request.
 
 1. Install the required node modules
 ```
-npm install --save guid sha256 jsonwebtoken node-fetch
+npm install guid sha256 jsonwebtoken node-fetch
 ```
 
 2. Create token generator function
@@ -64,21 +65,21 @@ import sha256 from 'sha256';
 import jwt from 'jsonwebtoken';
 
 function generateToken(content) {
-  jwt.sign({
+  return jwt.sign({
     jti: Guid.raw(),
     iss: API_KEY,
     sub: sha256(content),
     exp: Math.floor(Date.now() / 1000) + 10
-  }, API_SECRET)
+  }, API_SECRET);
 }
 ```
 Note: `jsonwebtoken` module auto fills the `iat - Issued At` value.
 
 3. Issue the POST request to generate an interview link and console log the output
 ```js
-import fetch from 'node-fetch'
+import fetch from 'node-fetch';
 
-const payload = {}
+const payload = {};
 
 fetch('https://interviews.skype.com/api/interviews', {
   method: 'POST',
@@ -89,7 +90,7 @@ fetch('https://interviews.skype.com/api/interviews', {
   body: JSON.stringify(payload)
 })
 .then(res => res.json())
-.then(console.log)
+.then(console.log);
 ```
 
 Now you'll see the output containing the URLs generated for the interview. 

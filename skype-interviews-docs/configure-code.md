@@ -3,9 +3,9 @@ We know coding interviews can be tricky and requires a great setup. Therefore we
 # List of available code editor configurations
 
 |Property |	Description	| Data type |	Default value |
-|---------|-------------|---|---|
+|:---------:|-------------|:---:|:---:|
 |**codeExecution** | Enable code execution? | Boolean | `true` |
-|**codingLanguages** | Which coding languages should be available to choose? *Possible values:* `c`, `cpp`, `csharp`, `fsharp`, `go`, `java`, `javascript`, `php`, `python`, `ruby`, `rust`, `typescript` | String array | `["all"]` |
+|**codingLanguages** | Which coding languages should be available to choose? *Possible values:* `c`, `cpp`, `csharp`, `fsharp`, `go`, `java`, `javascript`, `php`, `python`, `ruby`, `rust`, `typescript` or `all` | String array | `["all"]` |
 |**defaultCodingLanguage** | What is the default coding language? | String | `"javascript"` |
 
 # Set code editor configurations
@@ -15,7 +15,7 @@ If you don't want to disable code execution, limit coding languages or change th
 For instance, if you want to disable code execution and change default language to `Java`, then you can issue this request.
 
 **Request**
-```
+```http
 POST /api/interviews HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -30,7 +30,7 @@ Content-Type: application/json
 ```
 
 **Response**
-```
+```json
 {
     ...,
     "urls": [
@@ -60,7 +60,7 @@ As always, you can see your configuration reflected in the response if it was su
 If you want to limit the code editor to certain languages, then you'll have to set the `codingLanguages` object in `codingConfig`. In this example, we're limiting it to Java, C# and C++.
 
 **Request**
-```
+```http
 POST /api/interviews HTTP/1.1
 Host: interviews.skype.com
 Authorization: Bearer <YOUR_TOKEN>
@@ -78,7 +78,7 @@ Content-Type: application/json
 ```
 
 **Response**
-```
+```json
 {
     ...,
     "urls": [
